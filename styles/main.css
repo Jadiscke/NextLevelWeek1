@@ -1,3 +1,8 @@
+:root {
+    --title-color: #322153;
+}
+
+
 html {
     font-family: 'Roboto', sans-serif;
 }
@@ -39,7 +44,7 @@ a {
 
 #page-home header a {
     display: flex;
-    color: #322153;
+    color: var(--title-color);
     font-weight: 700;
     
 }
@@ -53,3 +58,11 @@ a {
     
 }
 
+#page-home main {
+    max-width: 560px;
+}
+
+#page-home main h1 {
+    font-size: 54px;
+    color: var(--title-color);
+}
