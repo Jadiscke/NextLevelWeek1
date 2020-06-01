@@ -2,6 +2,10 @@ html {
     font-family: 'Roboto', sans-serif;
 }
 
+body {
+    background-color: #f0f0f5;
+}
+
 /* BOX MODEL 
 
     Modelo de Caixa
