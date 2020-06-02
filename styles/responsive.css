@@ -27,3 +27,15 @@
     }
 
 }
+
+@media (max-height: 800px){
+    #page-home {
+        background-position-y: 200px ;
+    }
+}
+
+@media (min-height: 1200px){
+    #page-home {
+        background-position-y: 40vh ;
+    }
+}
