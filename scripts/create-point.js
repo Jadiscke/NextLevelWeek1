@@ -55,7 +55,10 @@ document
 // Itens de Coleta
 
 function handleSelectedItem(event){
-   console.log(event.target) 
+    const itemLi = event.target;
+    const itemId = itemLi.dataset.id;
+
+    itemLi.classList.toggle("selected")
 }
 
 const itemsToCollect = document.querySelectorAll(".items-grid li")

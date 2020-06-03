@@ -136,6 +136,9 @@ form button:hover {
     justify-content: space-between;
     text-align: center;
     cursor: pointer;
+
+    transition: 400ms;
+    outline: none;
 }
 
 .items-grid li span {
