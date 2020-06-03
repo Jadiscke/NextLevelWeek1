@@ -54,11 +54,22 @@ document
 
 // Itens de Coleta
 
+let selectedItems = [1]
+
+
 function handleSelectedItem(event){
     const itemLi = event.target;
     const itemId = itemLi.dataset.id;
 
     itemLi.classList.toggle("selected")
+
+    const alreadySelected = selectedItems.findIndex( item => item == itemId )
+    console.log(alreadySelected)
+    if(alreadySelected >= 0) {
+        let filteredItems = selectedItems.filter( item => item != itemId)
+        console.log(filteredItems)
+    }
+
 }
 
 const itemsToCollect = document.querySelectorAll(".items-grid li")
