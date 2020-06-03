@@ -28,11 +28,9 @@ function populateCitys(event) {
     stateInput.value = event.target.options[indexOfSelectState].text;
 
 
-    if (citySelect.disabled){
-        citySelect.disabled = false;
-    }else{
-        citySelect.innerHTML = `<option value="">Selecione a Cidade</option>`
-    }
+    citySelect.disabled = true;
+    citySelect.innerHTML = `<option value="">Selecione a Cidade</option>`
+
     fetch(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${ufId}/municipios`)
         .then( res =>  res.json())
         .then( citys => {
@@ -40,6 +38,8 @@ function populateCitys(event) {
             for (const city of citys) {
                 citySelect.innerHTML += `<option value="${city.id}">${city.nome}</option>`
             }
+
+            citySelect.disabled = false;
         })
 }
 
