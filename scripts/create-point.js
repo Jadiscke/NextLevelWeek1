@@ -54,7 +54,8 @@ document
 
 // Itens de Coleta
 
-let selectedItems = [1]
+let selectedItems = []
+const collectedItems = document.querySelector("input[name=items]")
 
 
 function handleSelectedItem(event){
@@ -67,9 +68,15 @@ function handleSelectedItem(event){
     console.log(alreadySelected)
     if(alreadySelected >= 0) {
         let filteredItems = selectedItems.filter( item => item != itemId)
-        console.log(filteredItems)
+        selectedItems = filteredItems;
+    }else {
+        selectedItems.push(itemId);
     }
 
+
+    collectedItems.value = selectedItems;
+
+    
 }
 
 const itemsToCollect = document.querySelectorAll(".items-grid li")
