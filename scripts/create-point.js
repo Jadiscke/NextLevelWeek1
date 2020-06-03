@@ -49,3 +49,17 @@ populateUFs();
 document
     .querySelector("select[name=uf]")
     .addEventListener("change", populateCitys)
+
+
+
+// Itens de Coleta
+
+function handleSelectedItem(event){
+   console.log(event.target) 
+}
+
+const itemsToCollect = document.querySelectorAll(".items-grid li")
+
+for (const item of itemsToCollect) {
+    item.addEventListener("click", handleSelectedItem);
+}
