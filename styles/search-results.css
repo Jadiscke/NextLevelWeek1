@@ -1,3 +1,15 @@
+body::after{
+    content: "";
+    position: fixed;
+    background: white;
+    top: 250px;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+
 #page-search-results {
     width: 90%;
     max-width: 1100px;
@@ -35,6 +47,8 @@ main {
 main h4 {
     font-family: Roboto, sans-serif;
     font-weight: 400;
+    
+    margin: 24px 0;
 }
 
 main .cards {
@@ -64,12 +78,22 @@ main .card h1 {
 }
 
 main .card h3 {
+    margin: 24px 0;
     font-family: Robot, sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 24px;
     line-height: 34px;
 
-    color: #34cb79;
+    color: var(--primary-color);
 
+}
+
+
+main .card p {
+    font-size: 16px;
+    line-height: 26px;
+
+
+    color: #6c6c80;
 }
