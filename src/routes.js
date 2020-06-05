@@ -1,17 +1,20 @@
 const express = require('express');
 
+
 const router = express.Router();
 
+
+
 router.get('/', (req,res) => {
-    res.sendFile(`${__dirname}/views/index.html`);
+   return res.render(`index.html`);
 });
 
 router.get('/create-point', (req,res) => {
-    res.sendFile(`${__dirname}/views/create-point.html`);
+   return res.render(`create-point.html`);
 });
 
 router.get('/search', (req,res) => {
-    res.sendFile(`${__dirname}/views/search.html`);
+   return res.render(`search.html`);
 });
 
 
