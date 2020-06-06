@@ -24,6 +24,21 @@
     #page-search-results .cards {
         grid-template-columns: 1fr 1fr;
     }
+        
+    form .field-group{
+        flex-direction: column;
+    
+    }
+
+    form .field-group .field +.field {
+        margin-left: 0;
+    }
+
+    #page-create-point {
+        text-align: center;
+    }
+
+    
 }
 
 @media (max-width: 500px){
@@ -38,6 +53,11 @@
 
     #page-search-results .cards {
         grid-template-columns: 1fr;
+    }
+
+
+    .items-grid {
+        grid-template-columns: 1fr 1fr;
     }
 }
 
