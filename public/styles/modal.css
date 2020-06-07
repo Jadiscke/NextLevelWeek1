@@ -94,3 +94,15 @@
 #modal.hide {
     display: none;
 }
+
+/* Create Point */
+
+#modal.point .content h1{
+    margin-bottom: 42px;
+}
+
+#modal.point .content .header {
+    flex-direction: column;
+
+
+}

@@ -12,12 +12,39 @@ router.get('/', (req,res) => {
 });
 
 router.get('/create-point', (req,res) => {
-   return res.render(`create-point.njk`);
+
+   return res.render(`create-point.njk`, {saved: true});
 });
 
 router.post('/create-point', (req,res)=>{
-   console.log(req.body);
-   res.redirect('/');
+
+
+  const query = `
+    INSERT INTO places (
+        image,
+        name,
+        address,
+        address2,
+        state,
+        city,
+        items
+    ) VALUES (?,?,?,?,?,?,?);
+   `;
+
+   ({ image, name, address, address2, state, city, items } = req.body);
+
+   const values = [image,name,address, address2,state,city,items];
+   console.log(values);
+   db.run(query, values, function(err){
+      if (err){
+         return console.log(err);
+     }
+
+     console.log("cadastrado com sucesso");
+     console.log(this);
+
+     res.render('/create-point.njk', {saved: true});
+   });
 });
 
 router.get('/search', (req,res) => {

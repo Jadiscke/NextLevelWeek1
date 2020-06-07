@@ -54,16 +54,16 @@ const values = [
 
     // db.run(query, values, afterInsertData);
 
-    // db.all(`SELECT * FROM places`, function(err,rows) {
-    //     if (err){
-    //         return console.log(err);
-    //     }
+    db.all(`SELECT * FROM places`, function(err,rows) {
+        if (err){
+            return console.log(err);
+        }
 
-    //     console.log(rows);
+        console.log(rows);
 
-    // });
+    });
 
-    // db.run(`DELETE FROM places WHERE id = ?`, [1], function(err){
+    // db.run(`DELETE FROM places WHERE id = ?`, [4], function(err){
     //     if(err){
     //         return console.log(err);
     //     }
