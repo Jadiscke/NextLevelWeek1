@@ -3,6 +3,9 @@ const path = require('path');
 const server = express();
 const routes = require(`${__dirname}/routes.js`);
 
+const db = require('./database/db.js');
+
+
 const nunjucks = require ("nunjucks");
 
 nunjucks.configure("src/views", {
