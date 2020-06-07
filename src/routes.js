@@ -13,7 +13,7 @@ router.get('/', (req,res) => {
 
 router.get('/create-point', (req,res) => {
 
-   return res.render(`create-point.njk`, {saved: true});
+   return res.render(`create-point.njk`, {saved: false});
 });
 
 router.post('/create-point', (req,res)=>{
@@ -49,9 +49,13 @@ router.post('/create-point', (req,res)=>{
 
 router.get('/search', (req,res) => {
 
-   
+   const search = req.query.search;
 
-   db.all(`SELECT * FROM places`, function(err,rows) {
+   if (search ===""){
+      return res.render(`search.njk`, { places: [], total: 0 } )
+   }
+
+   db.all(`SELECT * FROM places WHERE city LIKE '%${search}%'`, function(err,rows) {
       if (err){
          return console.log(err);
       }
