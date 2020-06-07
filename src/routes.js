@@ -5,7 +5,7 @@ const router = express.Router();
 
 const db = require('./database/db.js');
 
-
+router.use(express.urlencoded({extended: true}));
 
 router.get('/', (req,res) => {
    return res.render(`index.njk`);
@@ -13,6 +13,11 @@ router.get('/', (req,res) => {
 
 router.get('/create-point', (req,res) => {
    return res.render(`create-point.njk`);
+});
+
+router.post('/create-point', (req,res)=>{
+   console.log(req.body);
+   res.redirect('/');
 });
 
 router.get('/search', (req,res) => {
@@ -25,8 +30,8 @@ router.get('/search', (req,res) => {
       }
 
       console.log(rows);
-
-      return res.render(`search.njk`, { places: rows } );
+      const total = rows.length
+      return res.render(`search.njk`, { places: rows, total } );
 
    });
 

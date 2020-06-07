@@ -12,10 +12,18 @@
     {% include "partials/page-header.njk" %}
     <main>
         <h4>
+
+        {% if total > 0 %}
             <strong>
-                2 pontos
+            {{total}} pontos 
+                
             </strong>
             Encontrados
+        {% else %}
+            <h1>Nenhum ponto de coleta encontrado</h1>
+
+        {% endif %}
+            
         </h4>
 
         <div class="cards">
