@@ -3,6 +3,8 @@ const express = require('express');
 
 const router = express.Router();
 
+const db = require('./database/db.js');
+
 
 
 router.get('/', (req,res) => {
@@ -14,7 +16,21 @@ router.get('/create-point', (req,res) => {
 });
 
 router.get('/search', (req,res) => {
-   return res.render(`search.njk`);
+
+   
+
+   db.all(`SELECT * FROM places`, function(err,rows) {
+      if (err){
+         return console.log(err);
+      }
+
+      console.log(rows);
+
+      return res.render(`search.njk`, { places: rows } );
+
+   });
+
+   
 });
 
 
