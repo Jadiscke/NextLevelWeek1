@@ -49,8 +49,8 @@ Para rodar o programa use o `npm start`.
 
 ## Próximos Passos
 
-+ [ ] Página de Cadastro com Autênticação
-+ [ ] Utilizar PostegresSQL
++ [ ] Página de Cadastro com Autenticação
++ [ ] Utilizar PostegreSQL
 + [ ] Fazer o Deploy do Projeto utilizando o Heroku
 + [ ] Melhorar Responsividade do Projeto
 
