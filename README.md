@@ -42,7 +42,7 @@ Para testar o projeto basta clonar esse repositório em pasta da sua máquina
 
 Use `npm i -y` no terminal dentro da pasta escolhida para instalar os módulos necessários.
 
-Use `npm run develop` para rodar o script de teste, que precisa do módulo NODEMON instalado, se não possuir basta adicionalo como dependência de desenvolvimento através do comando `npm i nodemon -D`.
+Use `npm run develop` para rodar o script de teste, que precisa do módulo NODEMON instalado, se não possuir basta adicionar como dependência de desenvolvimento através do comando `npm i nodemon -D`.
 
 Para rodar o programa use o `npm start`.
 
